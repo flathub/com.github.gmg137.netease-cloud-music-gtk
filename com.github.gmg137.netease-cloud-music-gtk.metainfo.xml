@@ -10,6 +10,7 @@
   <project_license>GPL-3.0</project_license>
   
   <url type="homepage">https://github.com/gmg137/netease-cloud-music-gtk</url>
+  <url type="bugtracker">https://github.com/gmg137/netease-cloud-music-gtk/issues</url>
   
   <recommends>
     <control>pointing</control>
@@ -26,16 +27,14 @@
   <launchable type="desktop-id">com.github.gmg137.netease-cloud-music-gtk.desktop</launchable>
   <screenshots>
     <screenshot type="default">
-      <image>https://user-images.githubusercontent.com/6460323/74423902-fa996900-4e8b-11ea-915f-a4ec40bd2982.jpg</image>
+      <image>https://raw.githubusercontent.com/gmg137/netease-cloud-music-gtk/2.0.0/screenshots/discover.png</image>
     </screenshot>
 	<screenshot>
-      <image>https://user-images.githubusercontent.com/6460323/74421939-c8d2d300-4e88-11ea-9b93-962ae80f5a11.png</image>
-    </screenshot>
-	<screenshot>
-      <image>https://user-images.githubusercontent.com/6460323/74424004-29afda80-4e8c-11ea-9c16-af3f25525c9c.jpeg</image>
+      <image>https://github.com/gmg137/netease-cloud-music-gtk/raw/2.0.0/screenshots/toplist.png</image>
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2022-07-02" version="2.0.1"/>
     <release date="2021-08-29" version="1.2.2"/>
   </releases>
   <content_rating type="oars-1.1" />
