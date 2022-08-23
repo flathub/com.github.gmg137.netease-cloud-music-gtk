@@ -32,11 +32,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/gmg137/netease-cloud-music-gtk.git
-        commit: 5f90e03f72286f580dbeebac11455f425e614720
-        #tag: 2.0.1
-
-      - type: file
-        path: Cargo.lock
+        commit: 8627f33ee2a6f21e1cd01ac9cb25391bf0637629
+        #tag: 2.0.2
 
       - generated-sources.json
 
@@ -50,7 +47,7 @@ modules:
     build-commands:
     #- rename com.gitee com.github ${FLATPAK_DEST}/share/{applications/*,icons/hicolor/*/*/*}
       - desktop-file-edit --set-key=StartupWMClass --set-value=com.gitee.gmg137.NeteaseCloudMusicGtk4 ${FLATPAK_DEST}/share/applications/*.desktop
-      - install -Dm644 com.github.gmg137.netease-cloud-music-gtk.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
+      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
       - rm -r ${FLATPAK_DEST}/share/{appdata,icons/hicolor/symbolic}
     sources:
       - type: file
