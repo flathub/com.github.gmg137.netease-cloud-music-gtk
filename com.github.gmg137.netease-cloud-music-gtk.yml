@@ -1,12 +1,12 @@
 app-id: com.github.gmg137.netease-cloud-music-gtk
 runtime: org.gnome.Platform
-runtime-version: "42"
+runtime-version: "43"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
 command: netease-cloud-music-gtk4
-rename-icon: com.gitee.gmg137.NeteaseCloudMusicGtk4
 rename-desktop-file: com.gitee.gmg137.NeteaseCloudMusicGtk4.desktop
+rename-icon: icon
 separate-locales: false
 finish-args:
   - --share=ipc
@@ -18,7 +18,11 @@ finish-args:
   - --filesystem=xdg-music
   - --persist=.lyrics
   - --own-name=com.gitee.gmg137.NeteaseCloudMusicGtk4
-  - --own-name=org.mpris.MediaPlayer2.com.gitee.gmg137.NeteaseCloudMusicGtk4
+  - --own-name=org.mpris.MediaPlayer2.com.github.gmg137.netease-cloud-music-gtk
+
+build-options:
+  env:
+    app_id: com.gitee.gmg137.NeteaseCloudMusicGtk4
 
 modules:
   - name: netease-cloud-music-gtk
@@ -32,23 +36,25 @@ modules:
     sources:
       - type: git
         url: https://github.com/gmg137/netease-cloud-music-gtk.git
-        commit: 8627f33ee2a6f21e1cd01ac9cb25391bf0637629
-        #tag: 2.0.2
+        commit: 2ab2bf2d6d2e613a01734b140af43b7f8d3fb914
+        #tag: 2.0.3
 
       - generated-sources.json
 
       - type: shell
         commands:
-          - sed -i "s/export CARGO_HOME.*//g" build-aux/cargo.sh 
-          - sed -i '5s/^/cargo fetch --manifest-path $MESON_SOURCE_ROOT\/Cargo.toml;\n/' build-aux/cargo.sh
+          # set mpris id
+          - sed -i "s/crate::APP_ID/\"${FLATPAK_ID}\"/g" src/audio/mpris.rs
 
   - name: post-install
     buildsystem: simple
     build-commands:
-    #- rename com.gitee com.github ${FLATPAK_DEST}/share/{applications/*,icons/hicolor/*/*/*}
-      - desktop-file-edit --set-key=StartupWMClass --set-value=com.gitee.gmg137.NeteaseCloudMusicGtk4 ${FLATPAK_DEST}/share/applications/*.desktop
+      - desktop-file-edit --set-key=StartupWMClass --set-value=com.gitee.gmg137.NeteaseCloudMusicGtk4
+        --set-key=Name --set-value="NetEase Cloud Music Gtk4" 
+        ${FLATPAK_DEST}/share/applications/*.desktop
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
-      - rm -r ${FLATPAK_DEST}/share/{appdata,icons/hicolor/symbolic}
+      - install -Dm644 ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/{$app_id,icon}.svg
+      - rm -r ${FLATPAK_DEST}/share/appdata
     sources:
       - type: file
         path: com.github.gmg137.netease-cloud-music-gtk.metainfo.xml
