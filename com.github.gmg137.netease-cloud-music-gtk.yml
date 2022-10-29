@@ -49,9 +49,6 @@ modules:
   - name: post-install
     buildsystem: simple
     build-commands:
-      - desktop-file-edit --set-key=StartupWMClass --set-value=com.gitee.gmg137.NeteaseCloudMusicGtk4
-        --set-key=Name --set-value="NetEase Cloud Music Gtk4" 
-        ${FLATPAK_DEST}/share/applications/*.desktop
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
       - install -Dm644 ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/{$app_id,icon}.svg
       - rm -r ${FLATPAK_DEST}/share/appdata
