@@ -36,8 +36,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/gmg137/netease-cloud-music-gtk.git
-        commit: c568242471e97950dda2acbe17d03ffd87371e42
-        #tag: 2.0.3
+        tag: 2.1.0
+
+      - type: file
+        path: Cargo.lock
 
       - generated-sources.json
 

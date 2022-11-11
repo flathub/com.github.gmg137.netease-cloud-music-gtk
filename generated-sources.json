@@ -2,8 +2,8 @@
     {
         "type": "git",
         "url": "https://github.com/gmg137/netease-cloud-music-api",
-        "commit": "1fcce11c4798e8be0d845ffafa0b4439af116845",
-        "dest": "flatpak-cargo/git/netease-cloud-music-api-1fcce11"
+        "commit": "adf1765cfbf34b737af86810b14e9c8dabd3b3e4",
+        "dest": "flatpak-cargo/git/netease-cloud-music-api-adf1765"
     },
     {
         "type": "archive",
@@ -1633,7 +1633,7 @@
     {
         "type": "shell",
         "commands": [
-            "cp -r --reflink=auto \"flatpak-cargo/git/netease-cloud-music-api-1fcce11/.\" \"cargo/vendor/netease-cloud-music-api\""
+            "cp -r --reflink=auto \"flatpak-cargo/git/netease-cloud-music-api-adf1765/.\" \"cargo/vendor/netease-cloud-music-api\""
         ]
     },
     {
@@ -2750,14 +2750,14 @@
     {
         "type": "archive",
         "archive-type": "tar-gzip",
-        "url": "https://static.crates.io/crates/version-compare/version-compare-0.1.0.crate",
-        "sha256": "fe88247b92c1df6b6de80ddc290f3976dbdf2f5f5d3fd049a9fb598c6dd5ca73",
-        "dest": "cargo/vendor/version-compare-0.1.0"
+        "url": "https://static.crates.io/crates/version-compare/version-compare-0.1.1.crate",
+        "sha256": "579a42fc0b8e0c63b76519a339be31bed574929511fa53c1a3acae26eb258f29",
+        "dest": "cargo/vendor/version-compare-0.1.1"
     },
     {
         "type": "inline",
-        "contents": "{\"package\": \"fe88247b92c1df6b6de80ddc290f3976dbdf2f5f5d3fd049a9fb598c6dd5ca73\", \"files\": {}}",
-        "dest": "cargo/vendor/version-compare-0.1.0",
+        "contents": "{\"package\": \"579a42fc0b8e0c63b76519a339be31bed574929511fa53c1a3acae26eb258f29\", \"files\": {}}",
+        "dest": "cargo/vendor/version-compare-0.1.1",
         "dest-filename": ".cargo-checksum.json"
     },
     {
