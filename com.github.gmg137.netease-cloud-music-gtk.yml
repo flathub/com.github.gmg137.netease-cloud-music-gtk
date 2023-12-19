@@ -18,6 +18,7 @@ finish-args:
   - --filesystem=xdg-music
   - --persist=.lyrics
   - --own-name=com.gitee.gmg137.NeteaseCloudMusicGtk4
+  - --own-name=org.mpris.MediaPlayer2.NeteaseCloudMusicGtk
   - --own-name=org.mpris.MediaPlayer2.com.github.gmg137.netease-cloud-music-gtk
 
 build-options:
@@ -47,8 +48,6 @@ modules:
         commands:
           # set mpris id
           - sed -i "s/crate::APP_ID/\"${FLATPAK_ID}\"/g" src/audio/mpris.rs
-          # tmp fix for 2.3.0
-          - sed -i "s/crate::MPRIS_NAME/\"${FLATPAK_ID}\"/g" src/audio/mpris.rs
 
   - name: post-install
     buildsystem: simple
