@@ -36,7 +36,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/gmg137/netease-cloud-music-gtk.git
-        tag: 2.2.0
+        tag: 2.3.0
 
       - type: file
         path: Cargo.lock
@@ -47,13 +47,14 @@ modules:
         commands:
           # set mpris id
           - sed -i "s/crate::APP_ID/\"${FLATPAK_ID}\"/g" src/audio/mpris.rs
+          # tmp fix for 2.3.0
+          - sed -i "s/crate::MPRIS_NAME/\"${FLATPAK_ID}\"/g" src/audio/mpris.rs
 
   - name: post-install
     buildsystem: simple
     build-commands:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
       - install -Dm644 ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/{$app_id,icon}.svg
-      - rm -r ${FLATPAK_DEST}/share/appdata
     sources:
       - type: file
         path: com.github.gmg137.netease-cloud-music-gtk.metainfo.xml
