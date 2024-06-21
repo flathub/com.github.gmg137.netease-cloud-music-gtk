@@ -17,10 +17,11 @@ finish-args:
   - --filesystem=~/.lyrics
   - --own-name=org.mpris.MediaPlayer2.NeteaseCloudMusicGtk4
   - --own-name=com.gitee.gmg137.NeteaseCloudMusicGtk4
+  - --own-name=org.mpris.MediaPlayer2.com.github.gmg137.netease-cloud-music-gtk
 
 build-options:
   env:
-    app_id: com.github.gmg137.netease-cloud-music-gtk
+    app_id: com.gitee.gmg137.NeteaseCloudMusicGtk4
 
 modules:
   - name: netease-cloud-music-gtk
