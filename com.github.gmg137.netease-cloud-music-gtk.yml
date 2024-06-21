@@ -5,6 +5,8 @@ sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
 command: netease-cloud-music-gtk4
+rename-desktop-file: com.gitee.gmg137.NeteaseCloudMusicGtk4.desktop
+rename-icon: icon
 separate-locales: false
 finish-args:
   - --share=ipc
@@ -28,8 +30,6 @@ modules:
     buildsystem: meson
     build-options:
       append-path: /usr/lib/sdk/rust-stable/bin
-      build-args: 
-        - --share=network
       env:
         CARGO_NET_OFFLINE: 'true'
         CARGO_HOME: '/run/build/netease-cloud-music-gtk/cargo'
