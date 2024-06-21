@@ -1,4 +1,4 @@
-app-id: com.gitee.gmg137.NeteaseCloudMusicGtk4
+app-id: com.github.gmg137.netease-cloud-music-gtk
 runtime: org.gnome.Platform
 runtime-version: "46"
 sdk: org.gnome.Sdk
@@ -20,7 +20,7 @@ finish-args:
 
 build-options:
   env:
-    app_id: com.gitee.gmg137.NeteaseCloudMusicGtk4
+    app_id: com.github.gmg137.netease-cloud-music-gtk
 
 modules:
   - name: netease-cloud-music-gtk
