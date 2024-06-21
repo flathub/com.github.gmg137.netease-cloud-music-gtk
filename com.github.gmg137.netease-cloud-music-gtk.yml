@@ -47,7 +47,7 @@ modules:
   - name: post-install
     buildsystem: simple
     build-commands:
-      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
+      - install -Dm644 com.gitee.gmg137.NeteaseCloudMusicGtk4.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
     sources:
       - type: file
         path: com.gitee.gmg137.NeteaseCloudMusicGtk4.metainfo.xml
