@@ -48,7 +48,7 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm644 ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/{$app_id,icon}.svg
-      - install -Dm644 com.gitee.gmg137.NeteaseCloudMusicGtk4.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
+      - install -Dm644 com.github.gmg137.netease-cloud-music-gtk.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
     sources:
       - type: file
-        path: com.gitee.gmg137.NeteaseCloudMusicGtk4.metainfo.xml
+        path: com.github.gmg137.netease-cloud-music-gtk.metainfo.xml
