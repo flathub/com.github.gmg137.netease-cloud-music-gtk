@@ -1,6 +1,6 @@
 app-id: com.github.gmg137.netease-cloud-music-gtk
 runtime: org.gnome.Platform
-runtime-version: "45"
+runtime-version: "46"
 sdk: org.gnome.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -16,9 +16,9 @@ finish-args:
   - --socket=pulseaudio
   - --device=dri
   - --filesystem=xdg-music
-  - --persist=.lyrics
+  - --filesystem=~/.lyrics
+  - --own-name=org.mpris.MediaPlayer2.NeteaseCloudMusicGtk4
   - --own-name=com.gitee.gmg137.NeteaseCloudMusicGtk4
-  - --own-name=org.mpris.MediaPlayer2.NeteaseCloudMusicGtk
   - --own-name=org.mpris.MediaPlayer2.com.github.gmg137.netease-cloud-music-gtk
 
 build-options:
@@ -37,23 +37,18 @@ modules:
     sources:
       - type: git
         url: https://github.com/gmg137/netease-cloud-music-gtk.git
-        tag: 2.3.0
+        tag: 2.4.0
 
       - type: file
         path: Cargo.lock
 
       - generated-sources.json
 
-      - type: shell
-        commands:
-          # set mpris id
-          - sed -i "s/crate::APP_ID/\"${FLATPAK_ID}\"/g" src/audio/mpris.rs
-
   - name: post-install
     buildsystem: simple
     build-commands:
-      - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
       - install -Dm644 ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/{$app_id,icon}.svg
+      - install -Dm644 com.github.gmg137.netease-cloud-music-gtk.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
     sources:
       - type: file
         path: com.github.gmg137.netease-cloud-music-gtk.metainfo.xml
