@@ -18,8 +18,8 @@
                 </ul>
             </description>
         </release>
-        <release version="2.4.1" date="2024-08-10" />
-        <release version="2.4.0" date="2024-05-22" />
+        <release version="2.4.1" date="2024-08-10" type="stable" />
+        <release version="2.4.0" date="2024-05-22" type="stable" />
     </releases>
     <name>NetEase Cloud Music Gtk4</name>
     <name xml:lang="zh_CN">网易云音乐</name>
