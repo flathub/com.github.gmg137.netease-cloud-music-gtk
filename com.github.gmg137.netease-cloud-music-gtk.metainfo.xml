@@ -23,7 +23,7 @@
     <name>NetEase Cloud Music Gtk4</name>
     <name xml:lang="zh_CN">网易云音乐</name>
     <name xml:lang="zh_TW">網易雲音樂</name>
-    <summary>Linux muisc player for NetEase Cloud Music</summary>
+    <summary>Linux music player for NetEase Cloud Music</summary>
     <summary xml:lang="zh_TW">網易雲音樂 Linux 音樂播放器</summary>
     <summary xml:lang="zh_CN">网易云音乐 Linux 音乐播放器</summary>
     <url type="homepage">https://github.com/gmg137/netease-cloud-music-gtk</url>
