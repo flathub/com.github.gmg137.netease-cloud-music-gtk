@@ -52,6 +52,7 @@
     <summary xml:lang="zh_CN">网易云音乐 Linux 音乐播放器</summary>
     <url type="homepage">https://github.com/gmg137/netease-cloud-music-gtk</url>
     <url type="bugtracker">https://github.com/gmg137/netease-cloud-music-gtk/issues</url>
+    <url type="vcs-browser">https://github.com/gmg137/netease-cloud-music-gtk</url>
     <recommends>
         <control>pointing</control>
         <control>keyboard</control>
@@ -65,9 +66,11 @@
     <screenshots>
         <screenshot type="default">
             <image>https://gitee.com/gmg137/netease-cloud-music-gtk/raw/master/screenshots/discover.png</image>
+            <caption>主界面</caption>
         </screenshot>
         <screenshot>
             <image>https://gitee.com/gmg137/netease-cloud-music-gtk/raw/master/screenshots/toplist.png</image>
+            <caption>榜单页面</caption>
         </screenshot>
     </screenshots>
     <launchable type="desktop-id">com.gitee.gmg137.NeteaseCloudMusicGtk4.desktop</launchable>
